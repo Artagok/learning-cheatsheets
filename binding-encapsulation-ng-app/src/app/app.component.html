@@ -1,0 +1,18 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <app-game-control (getSeconds)="catchSeconds($event)"></app-game-control>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <app-even *ngFor="let even of evens" [num]="even"></app-even>
+    </div>
+    <div class="col-md-6">
+      <app-odd *ngFor="let odd of odds" [num]="odd"></app-odd>
+    </div>
+  </div>
+
+</div>
