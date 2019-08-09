@@ -1,2 +1,22 @@
-<h2>Text in app.component.html</h2>
-<h4>Pointed by templateUrl in app.component.ts</h4>
+<div class="container">
+
+  <div class="row">  
+    <div class="input-group">
+      <label>Username:
+      <input type="text" class="form-control" [(ngModel)]="username"></label>
+      <p>The username is: {{ username }}</p>
+      <button type="button" class="btn btn-primary" [disabled]="username.length === 0" (click)="resetUsername()">Reset</button>
+    </div>
+  </div>
+  
+  <hr style="border-color: grey">
+
+  <div class="row">
+    <p *ngIf="showSecret">Secret paragraph!</p>
+    <label class="custom-control-label">Toggle secret text =>
+    <input type="checkbox" class="custom-control-input" (change)="toggleSecret()"></label>
+    <p *ngFor="let click of clicks" [ngClass]="{blue: click.num >= 5}">{{ click.date }}</p>
+  </div>
+</div>
+
+
